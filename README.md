@@ -8,7 +8,7 @@
 
 # Dependencies
 - gptdisk
-- - git
+- git
 
 # Usage
 1) Boot the system on UEFI mode
