@@ -1,0 +1,25 @@
+[options]
+CheckSpace
+VerbosePkgLists
+ParallelDownloads = 5
+
+Architecture = auto
+HoldPkg      = pacman glibc
+#IgnorePkg    =
+
+LocalFileSigLevel = Optional
+RemoteFileSigLevel = Required
+SigLevel = Required DatabaseOptional TrustedOnly
+
+[core]
+SigLevel = PackageRequired
+Include = /etc/pacman.d/mirrorlist
+
+[extra]
+SigLevel = PackageRequired
+Include = /etc/pacman.d/mirrorlist
+
+[community]
+SigLevel = PackageRequired
+Include = /etc/pacman.d/mirrorlist
+

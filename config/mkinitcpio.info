@@ -1,0 +1,6 @@
+MODULES=()
+BINARIES=()
+FILES=()
+HOOKS="base udev autodetect modconf block keyboard keymap filesystems"
+COMPRESSION="lz4"
+
