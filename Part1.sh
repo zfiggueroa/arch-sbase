@@ -72,5 +72,4 @@ select_kernel(){
 	arch-chroot /mnt sh /arch-sbase/Part2.sh
 	rm -r /mnt/arch-sbase/
 
-clear; printf "\u\u Installation complete, now you can reboot \(• ◡ •)/\u\u"
-
+clear; printf "Installation complete, now you can reboot \(• ◡ •)/"
