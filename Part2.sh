@@ -10,7 +10,7 @@
 
 	# users
 	clear; read -p "Type your new username (user): " username
-	useradd -mG wheel $username; printf "\u -- Root passwd --\u"; passwd root; clear; printf "\u\u -- $username passwd --\u"; passwd $username
+	useradd -mG wheel $username; printf "\u Root passwd \u"; passwd root; clear; printf "\u $username passwd \u"; passwd $username
 	sed -i -e "s/# %wheel ALL=(ALL) ALL/ %wheel ALL=(ALL) ALL/I" /etc/sudoers
 
 	# locale
