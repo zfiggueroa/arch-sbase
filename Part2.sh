@@ -10,7 +10,7 @@
 
 	# users
 	clear; read -p "Type your new username (user): " username
-	useradd -mG wheel $username; printf "\u Root passwd \u"; passwd root; clear; printf "\u $username passwd \u"; passwd $username
+	useradd -mG wheel $username; printf "- Root passwd -"; echo ""; passwd root; clear; printf "- $username passwd -"; echo ""; passwd $username
 	sed -i -e "s/# %wheel ALL=(ALL) ALL/ %wheel ALL=(ALL) ALL/I" /etc/sudoers
 
 	# locale
@@ -40,10 +40,10 @@
 	# grub
 	clear; printf "Installing GRUB\n\n"
 	grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB
-	grub-makeconfig -o /boot/grub/grub.cfg
+	grub-mkconfig -o /boot/grub/grub.cfg
 
 	# DE
-	printf "\n\n gnome\n budgie\n xserver\n\n"; read -p "Select a desktop environment: " desktop
+	clear; printf "\n\n gnome\n budgie\n xserver\n\n"; read -p "Select a desktop environment: " desktop
 	p="pacman -S --noconfirm --needed"; case $desktop in gnome) $p gnome-shell;; budgie) $p budgie-desktop;; xserver) $p xterm xorg-xinit;; esac
 
 	# utils
@@ -62,8 +62,4 @@
 	cp -f config/grub.info /etc/default/grub
 	mkdir -p /etc/systemd/sleep.conf.d/ && cp -f config/no-hibernate.info /etc/systemd/sleep.conf.d/no-hibernate-suspend.conf
 	mkdir -p /etc/systemd/logind.conf.d/ && cp -f config/no-sleep.info /etc/systemd/logind.conf.d/no-hibernate-suspend.conf
-
-	#
-	clear; printf "Base install done........\n\n"
 	exit
-
