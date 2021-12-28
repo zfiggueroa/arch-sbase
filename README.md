@@ -1,7 +1,7 @@
 # README
 >WIP: Not ready for public use, still on alpha phase.
 
->This script was build from scratch.
+>This script was build from scratch and aims to be a modern version of arch-install.
 
 >This will force wipe the ENTIRE drive you select for installation.
 # DEPENDENCIES
